@@ -1,4 +1,4 @@
-package com.demo.template;
+package com.demo.springandreact;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
