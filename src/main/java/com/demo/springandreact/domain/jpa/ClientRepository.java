@@ -5,4 +5,6 @@ import com.demo.springandreact.domain.entity.Client;
 
 public interface ClientRepository extends JpaRepository<Client, Long> {
 
+  Client findByName(String name);
+
 }
