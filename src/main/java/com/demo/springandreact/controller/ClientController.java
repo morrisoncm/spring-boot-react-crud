@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.demo.springandreact.domain.dto.ClientDTO;
 import com.demo.springandreact.domain.entity.Client;
 import com.demo.springandreact.service.ClientService;
 
@@ -21,24 +22,24 @@ public class ClientController {
   private ClientService clientService;
 
   @PostMapping
-  public void createClient(@RequestBody Client client) {
-    clientService.createClient(client);
+  public void createClient(@RequestBody ClientDTO clientDTO) {
+    clientService.createClient(clientDTO);
   }
 
-  @GetMapping("/{name}")
-  public Client getClient(@PathVariable String name) {
-    return clientService.getClient(name);
+  @GetMapping("/{code}")
+  public Client getClient(@PathVariable String code) {
+    return clientService.getClient(code);
   }
 
-  @PutMapping("/{name}")
-  public void updateClient(@PathVariable String name, @RequestBody Client client) {
-    client.setName(name);
-    clientService.updateClient(client);
+  @PutMapping("/{code}")
+  public void updateClient(@PathVariable String code, @RequestBody ClientDTO clientDTO) {
+    clientDTO.setCode(code);
+    clientService.updateClient(clientDTO);
   }
 
-  @DeleteMapping("/{name}")
-  public void deleteClient(@PathVariable String name) {
-    clientService.deleteClient(name);
+  @DeleteMapping("/{code}")
+  public void deleteClient(@PathVariable String code) {
+    clientService.deleteClient(code);
   }
 
   @GetMapping()

@@ -1,17 +1,18 @@
 package com.demo.springandreact.service;
 
 import java.util.List;
+import com.demo.springandreact.domain.dto.ClientDTO;
 import com.demo.springandreact.domain.entity.Client;
 
 public interface ClientService {
 
-  void createClient(Client client);
+  void createClient(ClientDTO clientDTO);
 
-  Client getClient(String name);
+  Client getClient(String code);
 
   List<Client> getClients();
 
-  void updateClient(Client client);
+  void updateClient(ClientDTO clientDTO);
 
-  void deleteClient(String name);
+  void deleteClient(String code);
 }
