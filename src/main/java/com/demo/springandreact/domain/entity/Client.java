@@ -20,16 +20,16 @@ import lombok.NoArgsConstructor;
 @Table(name = "client")
 public class Client {
 
-  @Id
-  @JsonIgnore
-  @Column(name = "id")
-  @GeneratedValue(strategy=GenerationType.IDENTITY)
-  private Long id;
-  @Column(name = "code")
-  private String code;
-  @Column(name = "name")
-  private String name;
-  @Column(name = "email")
-  private String email;
+    @Id
+    @JsonIgnore
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "code")
+    private String code;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "email")
+    private String email;
 
 }

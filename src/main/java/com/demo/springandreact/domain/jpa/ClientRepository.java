@@ -5,6 +5,6 @@ import com.demo.springandreact.domain.entity.Client;
 
 public interface ClientRepository extends JpaRepository<Client, Long> {
 
-  Client findByCode(String code);
+    Client findByCode(String code);
 
 }

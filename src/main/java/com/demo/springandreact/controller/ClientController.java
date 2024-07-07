@@ -1,6 +1,7 @@
 package com.demo.springandreact.controller;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,34 +19,34 @@ import com.demo.springandreact.service.ClientService;
 @RequestMapping("/springandreact/clients")
 public class ClientController {
 
-  @Autowired
-  private ClientService clientService;
+    @Autowired
+    private ClientService clientService;
 
-  @PostMapping
-  public void createClient(@RequestBody ClientDTO clientDTO) {
-    clientService.createClient(clientDTO);
-  }
+    @PostMapping
+    public void createClient(@RequestBody ClientDTO clientDTO) {
+        clientService.createClient(clientDTO);
+    }
 
-  @GetMapping("/{code}")
-  public Client getClient(@PathVariable String code) {
-    return clientService.getClient(code);
-  }
+    @GetMapping("/{code}")
+    public Client getClient(@PathVariable String code) {
+        return clientService.getClient(code);
+    }
 
-  @PutMapping("/{code}")
-  public void updateClient(@PathVariable String code, @RequestBody ClientDTO clientDTO) {
-    clientDTO.setCode(code);
-    clientService.updateClient(clientDTO);
-  }
+    @PutMapping("/{code}")
+    public void updateClient(@PathVariable String code, @RequestBody ClientDTO clientDTO) {
+        clientDTO.setCode(code);
+        clientService.updateClient(clientDTO);
+    }
 
-  @DeleteMapping("/{code}")
-  public void deleteClient(@PathVariable String code) {
-    clientService.deleteClient(code);
-  }
+    @DeleteMapping("/{code}")
+    public void deleteClient(@PathVariable String code) {
+        clientService.deleteClient(code);
+    }
 
-  @GetMapping()
-  public List<Client> getClients() {
-    return clientService.getClients();
-  }
+    @GetMapping()
+    public List<Client> getClients() {
+        return clientService.getClients();
+    }
 
 }
 

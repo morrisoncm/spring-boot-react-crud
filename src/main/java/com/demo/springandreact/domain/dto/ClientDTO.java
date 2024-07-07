@@ -7,8 +7,8 @@ import lombok.Setter;
 @Setter
 public class ClientDTO {
 
-  private String code;
-  private String name;
-  private String email;
+    private String code;
+    private String name;
+    private String email;
 
 }
